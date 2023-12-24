@@ -99,8 +99,8 @@ WSGI_APPLICATION = "carhub.wsgi.application"
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:new_password@localhost:5433/carhub')}
-
+# DATABASES = {'default': dj_database_url.config(default='postgres://postgres:new_password@localhost:5433/carhub')}
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
