@@ -102,7 +102,7 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:new_password@localhost:5433/carhub')}
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
@@ -154,12 +154,12 @@ MESSAGE_TAGS = {
 SITE_ID = 1
 
 
-# Email sending
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = '########'
-EMAIL_HOST_PASSWORD = '#######'
-EMAIL_USE_TLS = True
+# # Email sending
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = '########'
+# EMAIL_HOST_PASSWORD = '#######'
+# EMAIL_USE_TLS = True
 
 
 # Whitenoise settings
