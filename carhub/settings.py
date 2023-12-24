@@ -100,7 +100,12 @@ WSGI_APPLICATION = "carhub.wsgi.application"
 # }
 
 # DATABASES = {'default': dj_database_url.config(default='postgres://postgres:new_password@localhost:5433/carhub')}
-DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+if ON_HEROKU:
+    DATABASE_URL = 'postgresql://<postgresql>'
+else:
+    DATABASE_URL = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
