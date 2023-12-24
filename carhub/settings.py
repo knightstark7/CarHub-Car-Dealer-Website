@@ -26,7 +26,7 @@ SECRET_KEY = '934nw3r62@!m0^ksgw3#31tntglnr%td+-_b89xpu2@q2zqv=d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['infinite-wave-84560-decb5b4ed4d9.herokuapp.com', 'carhubapp.co', 'www.carhubapp.co', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['infinite-wave-84560-decb5b4ed4d9.herokuapp.com', 'carhubapp.co', 'www.carhubapp.co']
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
