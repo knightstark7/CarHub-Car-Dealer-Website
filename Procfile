@@ -1,1 +1,1 @@
-web gunicorn carhub.wsgi:application --log-file -
+web: gunicorn carhub.wsgi

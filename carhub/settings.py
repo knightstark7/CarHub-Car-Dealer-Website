@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +27,7 @@ SECRET_KEY = '934nw3r62@!m0^ksgw3#31tntglnr%td+-_b89xpu2@q2zqv=d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['infinite-wave-84560-decb5b4ed4d9.herokuapp.com', 'carhubapp.co', 'www.carhubapp.co']
+ALLOWED_HOSTS = ['carhub-app-5f7e44512c11.herokuapp.com', 'carhubapp.co', 'www.carhubapp.co', 'localhost', '127.0.0.1']
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -102,7 +103,9 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+DATABASES = {
+    'default': dj_database_url.config(default='postgres://postgres:new_password@localhost:5433/carhub')
+}
 
 
 # Password validation
@@ -164,3 +167,5 @@ SITE_ID = 1
 
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
