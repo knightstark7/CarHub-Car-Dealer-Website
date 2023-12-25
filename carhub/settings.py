@@ -141,7 +141,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'carhub/static'),
 ]
-django_heroku.settings(locals())
 
 # Media settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -166,3 +165,5 @@ SITE_ID = 1
 
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
