@@ -92,19 +92,19 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "carhub",
-#         "USER": "postgres",
-#         "PASSWORD": "new_password",
-#         "HOST": "localhost",
-#         "PORT": "5433",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "carhub",
+        "USER": "postgres",
+        "PASSWORD": "new_password",
+        "HOST": "localhost",
+        "PORT": "5433",
+    }
+}
 
-DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
-
+# DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
+DATABASES = {'default': dj_database_url.config(default="postgres://postgres:new_password@localhost:5433/carhub")}
 
 
 # Password validation
