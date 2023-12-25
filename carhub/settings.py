@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://postgres:new_password@localhost:5433/carhub')
+    'default': dj_database_url.config(default='postgres://postgres:new_password@localhost/carhub')
 }
 
 
