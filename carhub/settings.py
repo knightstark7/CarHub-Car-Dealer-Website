@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 #     }
 # }
 
-# DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
