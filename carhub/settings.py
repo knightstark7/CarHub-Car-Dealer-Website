@@ -103,8 +103,8 @@ DATABASES = {
     }
 }
 
-# DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
-DATABASES = {'default': dj_database_url.config(default="postgres://postgres:new_password@localhost:5433/carhub")}
+DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
+# DATABASES = {'default': dj_database_url.config(default="postgres://postgres:new_password@localhost:5433/carhub")}
 
 
 # Password validation
