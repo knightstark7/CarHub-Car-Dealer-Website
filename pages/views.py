@@ -62,12 +62,12 @@ def contact(request):
             + message
         )
 
-        admin_info = User.objects.get(is_superuser=True)
+        admin_info = User.objects.filter(is_superuser=True).first()
         admin_email = admin_info.email
         send_mail(
             email_subject,
             message_body,
-            "rathan.kumar049@gmail.com",
+            "hcmus.app.carhub@gmail.com",
             [admin_email],
             fail_silently=False,
         )

@@ -92,16 +92,16 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "carhub",
-        "USER": "postgres",
-        "PASSWORD": "new_password",
-        "HOST": "localhost",
-        "PORT": "5433",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "carhub",
+#         "USER": "postgres",
+#         "PASSWORD": "new_password",
+#         "HOST": "localhost",
+#         "PORT": "5433",
+#     }
+# }
 
 DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
 # DATABASES = {'default': dj_database_url.config(default="postgres://postgres:new_password@localhost:5433/carhub")}
@@ -166,3 +166,10 @@ SITE_ID = 1
 
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'phucle122003@gmail.com'  # Thay bằng địa chỉ email của bạn
+EMAIL_HOST_PASSWORD = 'mvng tcry kuzd eqpi'  # Thay bằng mật khẩu ứng dụng bạn đã tạo
