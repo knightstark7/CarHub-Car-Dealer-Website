@@ -9805,7 +9805,7 @@ transform: translateX(26px);
 }
 
 /* popup */
-.modal {
+.modal-deposit {
     display: none;
     position: fixed;
     top: 0;
@@ -9816,7 +9816,7 @@ transform: translateX(26px);
     z-index: 9999; /* Đảm bảo pop-up được hiển thị phía trên */
 }
 
-.modal-content {
+.modal-deposit-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9827,18 +9827,19 @@ transform: translateX(26px);
     height: 100%;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    overflow: auto;
 }
 
-.modal-close {
+.modal-deposit-close {
     display: none;
 }
 
 /* Hiển thị pop-up khi checkbox được check */
-.toggle-checkbox:checked ~ .modal {
+.toggle-checkbox:checked ~ .modal-deposit {
     display: block;
 }
 
 /* Ẩn pop-up content khi checkbox không được check */
-.toggle-checkbox:checked ~ .modal .modal-content {
+.toggle-checkbox:checked ~ .modal-deposit .modal-deposit-content {
     display: block;
 }
