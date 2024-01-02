@@ -13,6 +13,9 @@
         <ul class="top-social-media pull-right">
           {% if user.is_authenticated %}
           <li>
+              <a href="{%url 'deposit'%}">Deposit</a>      
+          </li>
+          <li>
             <a href="{% url 'dashboard' %}" class="sign-in"
               ><i class="fa fa-tachometer"></i> Dashboard</a
             >

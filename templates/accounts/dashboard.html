@@ -34,6 +34,7 @@
                 <th scope="col">Car Name</th>
                 <th scope="col">Location</th>
                 <th scope="col">Action</th>
+                <th scope="col">Deposit</th>
               </tr>
               </thead>
               <tbody>
@@ -45,6 +46,22 @@
                   <td>{{inquiry.car_title}}</td>
                   <td>{{inquiry.city}}</td>
                   <td><a href="{% url 'car_detail' inquiry.car_id %}" class="btn btn-outline-dark">View Car</a></td>
+                  <td>
+                    <label class="toggle" for="toggle-{{ inquiry.id }}" >
+                      <input type="checkbox" id="toggle-{{ inquiry.id }}" class="toggle-checkbox">
+                      <div class="slider"></div>
+                      <div class="modal">
+                        <label class="modal-close" for="toggle-{{ inquiry.id }}"></label>
+                        <div class="modal-content">
+                            <!-- Nội dung của pop-up modal -->
+                            <h2>Thông tin chi tiết về xe</h2>
+                            <p>{{ inquiry.car_title }} - {{ inquiry.city }}</p>
+                            <!-- Thêm thông tin khác cần thiết vào đây -->
+                        </div>
+                    </div>
+                    
+                     </label>
+                  </td>
                 </tr>
               {% endfor %}
               </tbody>

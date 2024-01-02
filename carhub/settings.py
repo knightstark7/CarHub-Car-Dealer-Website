@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
+    'deposit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -95,9 +96,9 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 # DATABASES = {
 #     "default": {
 #         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "carhub",
+#         "NAME": "carzone_db",
 #         "USER": "postgres",
-#         "PASSWORD": "new_password",
+#         "PASSWORD": "123",
 #         "HOST": "localhost",
 #         "PORT": "5433",
 #     }
