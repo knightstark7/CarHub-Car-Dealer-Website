@@ -1,0 +1,7 @@
+
+<!-- Trong file deposit.html trong thư mục templates/deposit -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Nạp tiền</button>
+</form>
