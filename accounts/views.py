@@ -3,23 +3,46 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from contacts.models import Contact
 from django.contrib.auth.decorators import login_required
+from django.core.signing import Signer
 
-# Create your views here.
+# Create your views here.   
 
 def login(request):
+    remember = False
+    
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-
+        remember = request.POST.get('remember', False)
+        
+        print("Remember:", remember)
+        
         user = auth.authenticate(username=username, password=password)
 
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'You are now logged in.')
+            
+            if remember:
+                # Set cookies for username and password
+                response = redirect('dashboard')
+                response.set_cookie("remember", "true", max_age=60 * 60 * 1000, httponly=False)
+                response.set_cookie("username", username, max_age=60 * 60 * 1000, httponly=False)
+                response.set_cookie("password", password, max_age=60 * 60 * 1000, httponly=True)
+
+                return response
+            
             return redirect('dashboard')
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('login')
+    
+    remember_cookie = request.COOKIES.get('remember', False)
+    if remember_cookie:
+        username_cookie = request.COOKIES.get('username', "")
+        password_cookie = request.COOKIES.get('password', "")
+        return render(request, 'accounts/login.html', {'username': username_cookie, 'password': password_cookie})
+
     return render(request, 'accounts/login.html')
 
 def register(request):

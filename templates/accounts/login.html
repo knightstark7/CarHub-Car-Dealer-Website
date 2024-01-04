@@ -34,17 +34,21 @@
                     <form action="{% url 'login' %}" method="POST">
                       {% csrf_token %}
                         <div class="form-group form-box">
-                            <input type="text" name="username" class="input-text" placeholder="Username" required>
+                            <input type="text" name="username" class="input-text" placeholder="Username" value="{{username}}" required>
                             <i class="flaticon-mail"></i>
                         </div>
                         <div class="form-group form-box">
-                            <input type="password" name="password" class="input-text" placeholder="Password" required>
+                            <input type="password" name="password" class="input-text" placeholder="Password" value="{{password}}" required>
                             <i class="flaticon-lock"></i>
+                        </div>
+                        <div class="remember" >
+                            <label for="remember">Remember Me</label>
+                            <input type="checkbox" id="remember" name="remember" {% if remember %}checked{% endif %}>
                         </div>
                         <div class="form-group mb-0 clearfix">
                             <button type="submit" class="btn-md btn-theme float-center">Login</button>
                         </div>
-
+                        
                         <div class="clearfix"></div>
                         
                     </form>
