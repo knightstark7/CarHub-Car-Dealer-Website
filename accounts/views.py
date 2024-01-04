@@ -43,7 +43,7 @@ def register(request):
                     user = User.objects.create_user(first_name=firstname, last_name=lastname, email=email, username=username, password=password)
                     auth.login(request, user)
                     messages.success(request, 'You are now logged in.')
-                    return redirect('dashboard')
+                    #return redirect('dashboard')
                     user.save()
                     messages.success(request, 'You are registered successfully.')
                     return redirect('login')
