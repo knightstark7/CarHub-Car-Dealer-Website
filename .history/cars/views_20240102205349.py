@@ -25,10 +25,9 @@ def cars(request):
 
 def car_detail(request, id):
     single_car = get_object_or_404(Car, pk=id)
-    deposit_amount = single_car.price * 0.2
+
     data = {
         'single_car': single_car,
-        'deposit_amout': deposit_amount,
     }
     return render(request, 'cars/car_detail.html', data)
 

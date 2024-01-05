@@ -117,16 +117,19 @@
                                       </select>
                                   </div>
                               
+                                  <!-- Tính toán số tiền cần đặt cọc (20% giá của xe) -->
+                                  {% with deposit_amount=inquiry.price * 0.2 %}
                                   <div class="form-group">
                                       <label for="deposit_amount" class="col-form-label">Deposit Amount (20% of Car Price)</label>
                                       <input
                                           type="text"
                                           name="deposit_amount"
                                           class="form-control"
-                                          value="{{ inquiry.car_id }}"
+                                          value="{{ deposit_amount }}"
                                           readonly
                                       />
                                   </div>
+                                  {% endwith %}
                               
                                   <!-- ... Các trường thông tin khác -->
                               
