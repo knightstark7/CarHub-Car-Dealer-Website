@@ -81,26 +81,17 @@ def register(request):
 @login_required(login_url = 'login')
 def dashboard(request):
     user_inquiry = Contact.objects.order_by('-create_date').filter(user_id=request.user.id)
-    
+    # count = Contact.objects.order_by('-create_date').filter(user_id=request.user.id).count()
+    # Lấy thông tin chi tiết của xe dựa trên car_id từ Contact
     car_details = []
-    deposit_amounts = []  # Danh sách chứa giá trị deposit_amount tương ứng với mỗi inquiry
-
     for inquiry in user_inquiry:
         car_id = inquiry.car_id
         car = Car.objects.get(id=car_id)
         car_details.append(car)
-
-        # Tính toán giá trị deposit_amount và thêm vào danh sách deposit_amounts
-        deposit_amount = car.price * 0.2
-        deposit_amounts.append({
-            'car_id': car_id,
-            'amount': deposit_amount
-        })
     
     data = {
         'inquiries': user_inquiry,
-        'car_details': car_details,
-        'deposit_amounts': deposit_amounts,  # Thêm danh sách deposit_amount vào dữ liệu
+        'car_details': car_details,  # Thêm thông tin chi tiết của xe vào dữ liệu
     }
     return render(request, 'accounts/dashboard.html', data)
 
