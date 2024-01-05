@@ -92,10 +92,7 @@ def dashboard(request):
 
         # Tính toán giá trị deposit_amount và thêm vào danh sách deposit_amounts
         deposit_amount = car.price * 0.2
-        deposit_amounts.append({
-            'car_id': car_id,
-            'amount': deposit_amount
-        })
+        deposit_amounts.append(deposit_amount)
     
     data = {
         'inquiries': user_inquiry,

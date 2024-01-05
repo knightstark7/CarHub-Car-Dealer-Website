@@ -118,22 +118,22 @@
                                   </div>
                               
                                   <div class="form-group">
-                                    <label for="deposit_amount" class="col-form-label">Deposit Amount (20% of Car Price)</label>
-                                    {% for car_detail in car_details %}
-                                        {% if car_detail.id == inquiry.car_id %}
-                                            {% for deposit_amount in deposit_amounts %}
-                                                {% if deposit_amount.car_id == car_detail.id %}
-                                                    <input
-                                                        type="text"
-                                                        name="deposit_amount"
-                                                        class="form-control"
-                                                        value="{{ deposit_amount.amount }}"
-                                                        readonly
-                                                    />
-                                                {% endif %}
+                                      <label for="deposit_amount" class="col-form-label">Deposit Amount (20% of Car Price)</label>
+                                      {% for car_detail in car_details %}
+                                          {% if car_detail.id == inquiry.car_id %}
+                                            {%for deposit_amount in deposit_amounts%}
+                                              {%if deposit_amount.id == car_detail.id%}
+                                                <input
+                                                    type="text"
+                                                    name="deposit_amount"
+                                                    class="form-control"
+                                                    value="{{ car_detail.price }}"
+                                                    readonly
+                                                />
+                                              {% endif %}
                                             {% endfor %}
-                                        {% endif %}
-                                    {% endfor %}
+                                          {% endif %}
+                                      {% endfor %}
                                   </div>
                               
                                   <!-- ... Các trường thông tin khác -->

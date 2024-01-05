@@ -80,28 +80,22 @@ def register(request):
 
 @login_required(login_url = 'login')
 def dashboard(request):
-    user_inquiry = Contact.objects.order_by('-create_date').filter(user_id=request.user.id)
+    # Lấy tất cả các yêu cầu liên hệ của người dùng hiện tại
+    user_inquiries = Contact.objects.filter(user_id=request.user.id).order_by('-create_date')
     
-    car_details = []
-    deposit_amounts = []  # Danh sách chứa giá trị deposit_amount tương ứng với mỗi inquiry
-
-    for inquiry in user_inquiry:
-        car_id = inquiry.car_id
-        car = Car.objects.get(id=car_id)
-        car_details.append(car)
-
-        # Tính toán giá trị deposit_amount và thêm vào danh sách deposit_amounts
-        deposit_amount = car.price * 0.2
-        deposit_amounts.append({
-            'car_id': car_id,
-            'amount': deposit_amount
-        })
+    # Lấy danh sách các car_id từ yêu cầu liên hệ
+    car_ids = [inquiry.car_id for inquiry in user_inquiries]
     
+    # Truy vấn thông tin chi tiết của tất cả các xe có trong danh sách car_ids
+    car_details = Car.objects.filter(id__in=car_ids)
+    
+    
+    # Truyền thông tin chi tiết của xe và yêu cầu liên hệ vào template
     data = {
-        'inquiries': user_inquiry,
+        'inquiries': user_inquiries,
         'car_details': car_details,
-        'deposit_amounts': deposit_amounts,  # Thêm danh sách deposit_amount vào dữ liệu
     }
+    
     return render(request, 'accounts/dashboard.html', data)
 
 def logout(request):
