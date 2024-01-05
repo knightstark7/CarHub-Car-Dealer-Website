@@ -26,9 +26,9 @@ def login(request):
             if remember:
                 # Set cookies for username and password
                 response = redirect('dashboard')
-                response.set_cookie("remember", "true", max_age=60 * 60 * 1000, httponly=False)
-                response.set_cookie("username", username, max_age=60 * 60 * 1000, httponly=False)
-                response.set_cookie("password", password, max_age=60 * 60 * 1000, httponly=True)
+                response.set_cookie("remember", "true", max_age=60 * 60, httponly=False)
+                response.set_cookie("username", username, max_age=60 * 60, httponly=False)
+                response.set_cookie("password", password, max_age=60 * 60, httponly=True)
 
                 return response
             
