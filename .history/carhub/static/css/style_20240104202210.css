@@ -5647,11 +5647,6 @@ footer {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
 }
 
-.contact-section .form-section .remember {
-    float: left;
-    position: relative;
-}
-
 .contact-section .form-section .form-box i {
     position: absolute;
     top: 11px;
@@ -9805,9 +9800,9 @@ border-radius: 50px;
 .toggle input[type="checkbox"]:checked + .slider {
 background-color: #07a787;
 }
-.toggle input[type="checkbox"]:checked + .slider:before {
+/* .toggle input[type="checkbox"]:checked + .slider:before {
 transform: translateX(26px);
-}
+} */
 
 /* popup */
 .modal-deposit {

@@ -5647,11 +5647,6 @@ footer {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
 }
 
-.contact-section .form-section .remember {
-    float: left;
-    position: relative;
-}
-
 .contact-section .form-section .form-box i {
     position: absolute;
     top: 11px;
@@ -9835,9 +9830,9 @@ transform: translateX(26px);
     overflow: auto;
 }
 
-.modal-deposit-close {
+/* .modal-deposit-close {
     display: none;
-}
+} */
 
 /* Hiển thị pop-up khi checkbox được check */
 .toggle-checkbox:checked ~ .modal-deposit {
