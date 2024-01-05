@@ -17,7 +17,7 @@ def inquiry(request):
         email = request.POST['email']
         phone = request.POST['phone']
         message = request.POST['message']
-        price = request.POST['price']
+        
 
         if request.user.is_authenticated:
             user_id = request.user.id
@@ -40,7 +40,7 @@ def inquiry(request):
         contact = Contact(
             car_id=car_id, car_title=car_title, user_id=user_id,
             first_name=first_name, last_name=last_name, customer_need=customer_need, city=city,
-            state=state, email=email, phone=phone, message=message,price=price
+            state=state, email=email, phone=phone, message=message
         )
 
         # Uncomment the following lines when you want to send an email
