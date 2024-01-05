@@ -5670,11 +5670,15 @@ footer {
     font-size: 15px;
     font-weight: 400;
     border-radius: 3px;
+    display: inline-block; 
+    margin-top: 30px;
+    margin-right: 140px;
 }
 
 .contact-section .form-section input[type=checkbox], input[type=radio] {
     margin-right: 3px;
 }
+
 
 .contact-section .form-section button:focus {
     outline: none;
