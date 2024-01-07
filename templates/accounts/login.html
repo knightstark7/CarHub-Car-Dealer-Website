@@ -5,6 +5,8 @@
 {% load static %}
 {% load socialaccount %}
 {% comment %} {% providers_media_js %} {% endcomment %}
+
+
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
@@ -57,7 +59,7 @@
 
                         
                     </form>
-                    <p>Forget Password? <a href="{% url 'reset_password' %}" class="thembo"> Change</a></p>
+                    <p>Forget Password? <a href="{% url 'password_reset' %}" class="thembo"> Change</a></p>
                     <p>Don't have an account? <a href="{% url 'register' %}" class="thembo"> Register here</a></p>
                     
                 </div>
