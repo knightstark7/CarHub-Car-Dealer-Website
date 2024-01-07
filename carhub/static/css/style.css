@@ -9852,3 +9852,12 @@ transform: translateX(26px);
 /* .toggle-checkbox:checked ~ .modal-deposit .modal-deposit-content {
     display: block;
 } */
+
+.clearfix2{
+    position: relative;
+    right: -95px;
+}
+
+.fgpw {
+    color: #437FC7;
+}
