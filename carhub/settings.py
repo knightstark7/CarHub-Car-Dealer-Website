@@ -157,6 +157,7 @@ MESSAGE_TAGS = {
 SITE_ID = 1
 
 
+
 # # Email sending
 # EMAIL_HOST = 'smtp.gmail.com'
 # EMAIL_PORT = 587

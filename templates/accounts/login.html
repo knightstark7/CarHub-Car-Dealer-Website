@@ -4,7 +4,7 @@
 {% block content %}
 {% load static %}
 {% load socialaccount %}
-
+{% providers_media_js %}
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
@@ -50,6 +50,10 @@
                         </div>
                         
                         <div class="clearfix"></div>
+                        <ul class="social-list" style="margin-top: 30px;">
+                            <li><a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="facebook-bg" style="margin-right: 20px;"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
+                            <li><a href="{% provider_login_url 'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+                        </ul>
                         
                     </form>
                     <p>Don't have an account? <a href="{% url 'register' %}" class="thembo"> Register here</a></p>

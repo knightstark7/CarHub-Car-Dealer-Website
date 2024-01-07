@@ -16,6 +16,7 @@ class Contact(models.Model):
     user_id = models.IntegerField(blank=True)
     create_date = models.DateTimeField(blank=True, default=datetime.now)
     price = models.IntegerField(default=0)
+    is_deposited = models.BooleanField(default=False)
 
     def __str__(self):
         return self.email
