@@ -3,6 +3,7 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from contacts.models import Contact
 from cars.models import Car
+from deposit.models import Deposit
 from django.contrib.auth.decorators import login_required
 from django.core.signing import Signer
 
@@ -80,6 +81,7 @@ def register(request):
 
 @login_required(login_url = 'login')
 def dashboard(request):
+    # Lấy tát cả các inquiry mà user đó yêu cầu
     user_inquiry = Contact.objects.order_by('-create_date').filter(user_id=request.user.id)
     
     car_details = []
@@ -100,7 +102,7 @@ def dashboard(request):
     data = {
         'inquiries': user_inquiry,
         'car_details': car_details,
-        'deposit_amounts': deposit_amounts,  # Thêm danh sách deposit_amount vào dữ liệu
+        'deposit_amounts': deposit_amounts,
     }
     return render(request, 'accounts/dashboard.html', data)
 
@@ -109,3 +111,37 @@ def logout(request):
         auth.logout(request)
         return redirect('home')
     return redirect('home')
+
+
+def deposit_submit(request):
+    if request.method == 'POST':
+        user_id = request.POST['user_id']
+        car_id = request.POST['car_id']
+        car_title = request.POST['car_title']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        payment_method = request.POST['payment_method']
+        deposit_amount = request.POST['deposit_amount']
+
+        if request.user.is_authenticated:
+            user_id = request.user.id
+            has_contacted = Deposit.objects.filter(car_id=car_id, user_id=user_id).exists()
+            if has_contacted:
+                messages.error(request, 'You have already made an deposit about this car. Please wait until we get back to you.')
+                return redirect('dashboard')
+
+        # Get the first superuser or handle the case where there is no superuser
+        try:
+            admin_info = User.objects.filter(is_superuser=True).first()
+            if admin_info is None:
+                raise User.DoesNotExist("No superuser found.")
+        except User.DoesNotExist:
+            messages.error(request, 'Error: No superuser found to receive the deposit.')
+            return redirect('dashboard')
+
+        deposit = Deposit(car_id = car_id, car_title = car_title, user_id = user_id, email = email, phone = phone, payment_method = payment_method, deposit_amount = deposit_amount)
+        deposit.save()
+        messages.success(request, 'Your request has been submitted; we will get back to you shortly.')
+        return redirect('dashboard')
+
+    

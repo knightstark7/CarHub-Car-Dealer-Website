@@ -60,23 +60,19 @@
                                 <center>
                                   <img src="{% static 'img/logos/logo_white.png' %}" />
                                 </center>
-                                <button type="button" class="close" data-dismiss="modal">
-                                  <span>&times;</span>
-                                </button>
                               </div>
                               <div class="modal-body">
-                                <form action="{% url 'inquiry' %}" method="POST">
+                                <form action="{% url 'deposit_submit'%}" method="POST">
                                   {% csrf_token %}
                                   {% if user.is_authenticated %}
                                   <input type="hidden" name="user_id" value="{{user.id}}" />
                                   {% else %}
                                   <input type="hidden" name="user_id" value="0" />
                                   {% endif %}
-                              
-                                  <input type="hidden" name="car_id" value="{{single_car.id}}" />
-                              
-                                  <!-- ... Các trường thông tin cũ -->
-                              
+                                  
+                                  <input type="hidden" name="car_id" value="{{inquiry.car_id}}" />
+                                  <input type="hidden" name="car_title" value="{{inquiry.car_title}}" />
+                                  
                                   <div class="form-group">
                                       <label for="email" class="col-form-label">Email</label>
                                       <input
@@ -88,7 +84,7 @@
                                           if
                                           user.is_authenticated
                                           %}
-                                          value="{{user.email}}"
+                                          value="{{inquiry.email}}"
                                           {%
                                           endif
                                           %}
@@ -103,8 +99,16 @@
                                           name="phone"
                                           class="form-control"
                                           placeholder="Enter your phone number"
-                                          required
-                                      />
+                                          {%
+                                            if
+                                            user.is_authenticated
+                                            %}
+                                            value="{{inquiry.phone}}"
+                                            {%
+                                            endif
+                                            %}
+                                            required
+                                        />
                                   </div>
                               
                                   <div class="form-group">
@@ -113,7 +117,6 @@
                                           <option value="Credit Card">Credit Card</option>
                                           <option value="PayPal">PayPal</option>
                                           <option value="Bank Transfer">Bank Transfer</option>
-                                          <!-- Thêm các phương thức thanh toán khác nếu cần -->
                                       </select>
                                   </div>
                               
@@ -135,9 +138,6 @@
                                         {% endif %}
                                     {% endfor %}
                                   </div>
-                              
-                                  <!-- ... Các trường thông tin khác -->
-                              
                                   <hr />
                                   <input type="submit" value="Send" class="btn btn-block btn-danger" />
                               </form>

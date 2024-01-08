@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
     'contacts.apps.ContactsConfig',
-    'deposit',
+    'deposit.apps.DepositConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -96,15 +96,14 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "carzone_db",
+        "NAME": "carhub",
         "USER": "postgres",
         "PASSWORD": "123",
         "HOST": "localhost",
-        "PORT": "5433",
     }
 }
 
-DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
+# DATABASES = {'default': dj_database_url.parse("postgres://carhub_db_zh9h_user:ua1b5U6SQq6GZWnY1kYBGBd9fU6kclST@dpg-cm4j2ken7f5s73bvpgb0-a.oregon-postgres.render.com/carhub_db_zh9h")}
 # DATABASES = {'default': dj_database_url.config(default="postgres://postgres:new_password@localhost:5433/carhub")}
 
 
