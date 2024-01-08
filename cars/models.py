@@ -58,6 +58,11 @@ class Car(models.Model):
         ('WV', 'West Virginia'),
         ('WI', 'Wisconsin'),
         ('WY', 'Wyoming'),
+        ('PR', 'Puerto Rico'),
+        ('GU', 'Guam'),
+        ('VI', 'Virgin Islands'),
+        ('MP', 'Northern Mariana Islands'),
+        ('AS', 'American Samoa'),
     )
 
     year_choice = []
