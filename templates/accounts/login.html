@@ -4,7 +4,9 @@
 {% block content %}
 {% load static %}
 {% load socialaccount %}
-{% providers_media_js %}
+{% comment %} {% providers_media_js %} {% endcomment %}
+
+
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
@@ -51,12 +53,15 @@
                         
                         <div class="clearfix"></div>
                         <ul class="social-list" style="margin-top: 30px;">
-                            <li><a href="#" class="facebook-bg" style="margin-right: 20px;"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
+                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
                             <li><a href="#" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
                         </ul>
+
                         
                     </form>
-                    <p>Don't have an account? <a href="{% url 'register' %}" class="thembo"> Register here</a></p>
+                    <p>Forget Password? <a href="{% url 'password_reset' %}" class="thembo fgpw"> Reset Password</a></p>
+                    <p>Don't have an account? <a href="{% url 'register' %}" class="thembo fgpw"> Register here</a></p>
+                    
                 </div>
             </div>
         </div>
