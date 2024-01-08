@@ -108,19 +108,19 @@ $(function () {
                     $('.sticky-header').addClass('header-shrink');
                 }
                 if($('.do-sticky').length < 1) {
-                    $('.company-logo img').attr('src', '../static/img/logos/logo_black.png');
+                    $('.company-logo img').attr('src', '/static/img/logos/logo_black.png');
                 }
             }
             else {
                 $('.sticky-header').removeClass('header-shrink');
                 if($('.do-sticky').length < 1 && $('.fixed-header').length == 0 && $('.fixed-header2').length == 0) {
-                    $('.company-logo img').attr('src', '../static/img/logos/logo_white.png');
+                    $('.company-logo img').attr('src', '/static/img/logos/logo_white.png');
                 } else {
-                    $('.company-logo img').attr('src', '../static/img/logos/logo_black.png');
+                    $('.company-logo img').attr('src', '/static/img/logos/logo_black.png');
                 }
             }
         } else {
-            $('.company-logo img').attr('src', '../static/img/logos/logo_black.png');
+            $('.company-logo img').attr('src', '/static/img/logos/logo_black.png');
         }
     }
 
