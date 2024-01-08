@@ -27,14 +27,14 @@ def login(request):
             
             if remember:
                 # Set cookies for username and password
-                response = redirect('dashboard')
+                response = redirect('home')
                 response.set_cookie("remember", remember, max_age=60 * 60 * 500, httponly=False)
                 response.set_cookie("username", username, max_age=60 * 60 * 500, httponly=False)
                 response.set_cookie("password", password, max_age=60 * 60 * 500, httponly=True)
 
                 return response
             
-            return redirect('dashboard')
+            return redirect('home')
         else:
             messages.error(request, 'Invalid login credentials')
             return redirect('login')

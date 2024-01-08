@@ -96,9 +96,9 @@ WSGI_APPLICATION = 'carhub.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "carhub",
+        "NAME": "DemoDB",
         "USER": "postgres",
-        "PASSWORD": "123",
+        "PASSWORD": "21127016",
         "HOST": "localhost",
     }
 }
