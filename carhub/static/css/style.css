@@ -2928,8 +2928,9 @@ input[type=checkbox]:checked + label:before {
 }
 
 .car-box-3 .detail .title a:hover {
-    color: #343a40;
+    color: #37adaa;
 }
+
 
 .car-box-3 .detail .location{
     margin-bottom: 15px;
