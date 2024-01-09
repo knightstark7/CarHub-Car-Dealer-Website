@@ -9746,7 +9746,7 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
         color: #495057 !important;
 }
 .contact-dealer.modal-header{
-    background: #f0151f !important;
+    background: #437FC7 !important;
 }
 .contact-dealer.modal-header img{
     width: 75% !important;
@@ -9847,11 +9847,6 @@ transform: translateX(26px);
 .modal-deposit {
     display: none;
 }
-  
-.modal-deposit.visible {
-    display: block;
-}
-
 
 .clearfix2{
     position: relative;
@@ -9870,3 +9865,15 @@ transform: translateX(26px);
     padding-left: 20px;
     backdrop-filter: blur(3.5px);
 }  */
+
+input.btn.btn-block.btn-danger {
+    background-color: #437FC7;
+    color: #fff !important;
+    border: none;
+}
+
+input.btn.btn-block.btn-danger:hover{
+    background-color: #284ea1;
+    color: #fff;
+    border: none;
+}
