@@ -9846,7 +9846,6 @@ transform: translateX(26px);
 
 .modal-deposit {
     display: none;
-    /* Other styles */
 }
   
 .modal-deposit.visible {

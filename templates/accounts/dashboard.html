@@ -143,6 +143,26 @@
                                   <input type="submit" value="Send" class="btn btn-block btn-danger" />
                               </form>
                               </div>
+                              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                              <script>
+                              $(document).ready(function() {
+                                // Handle the click event for the toggle/slider
+                                $('.toggle-checkbox').on('change', function() {
+                                  var inquiryId = $(this).attr('id').split('-')[1];
+                                  if ($(this).is(':checked')) {
+                                    $('#modal-' + inquiryId).fadeIn();
+                                  } else {
+                                    $('#modal-' + inquiryId).fadeOut();
+                                  }
+                                });
+                                $('.modal-deposit-close').on('click', function() {
+                                  var modalId = $(this).attr('for').split('-')[1];
+                                  $('#modal-' + modalId).fadeOut();
+                                  // Uncheck the toggle when modal is closed (optional)
+                                  $('#toggle-' + modalId).prop('checked', false);
+                                });
+                              });
+                              </script>
                         </div>
                     </div>
                     </label>
