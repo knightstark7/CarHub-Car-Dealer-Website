@@ -49,9 +49,10 @@
                   <td><a href="{% url 'car_detail' inquiry.car_id %}" class="btn btn-outline-dark">View Car</a></td>
                   <td>
                     <label class="toggle" for="toggle-{{ inquiry.id }}" >
-                      <input type="checkbox" id="toggle-{{ inquiry.id }}" class="toggle-checkbox">
+                      <input type="checkbox" id="toggle-{{ inquiry.id }}" class="toggle-checkbox" {% if inquiry.is_deposited %}checked disabled{% endif %}>
+                      <!-- <input type="checkbox" id="toggle-{{ inquiry.id }}" class="toggle-checkbox"{% if inquiry.is_deposited %} checked disabled {% endif %}> -->
                       <div class="slider"></div>
-                      <div class="modal-deposit">
+                      <div class="modal-deposit" id="modal-{{ inquiry.id }}">
                         <label class="modal-deposit-close" for="toggle-{{ inquiry.id }}"></label>
                         <div class="modal-deposit-content">
                             <h2>CAR DEPOSIT</h2>
@@ -153,7 +154,6 @@
         {% else %}
           <h4>You have no inquiries</h4>
         {% endif %}
-
 </div>
 
 <!--   Dashboard End   -->

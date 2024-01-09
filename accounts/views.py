@@ -81,18 +81,16 @@ def register(request):
 
 @login_required(login_url = 'login')
 def dashboard(request):
-    # Lấy tát cả các inquiry mà user đó yêu cầu
     user_inquiry = Contact.objects.order_by('-create_date').filter(user_id=request.user.id)
     
     car_details = []
-    deposit_amounts = []  # Danh sách chứa giá trị deposit_amount tương ứng với mỗi inquiry
+    deposit_amounts = []
 
     for inquiry in user_inquiry:
         car_id = inquiry.car_id
         car = Car.objects.get(id=car_id)
         car_details.append(car)
 
-        # Tính toán giá trị deposit_amount và thêm vào danh sách deposit_amounts
         deposit_amount = car.price * 0.2
         deposit_amounts.append({
             'car_id': car_id,
@@ -138,7 +136,11 @@ def deposit_submit(request):
         except User.DoesNotExist:
             messages.error(request, 'Error: No superuser found to receive the deposit.')
             return redirect('dashboard')
-
+        
+        contact = Contact.objects.get(user_id=user_id, car_id=car_id)
+        contact.is_deposited = True
+        contact.save()
+        
         deposit = Deposit(car_id = car_id, car_title = car_title, user_id = user_id, email = email, phone = phone, payment_method = payment_method, deposit_amount = deposit_amount)
         deposit.save()
         messages.success(request, 'Your request has been submitted; we will get back to you shortly.')

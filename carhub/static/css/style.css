@@ -9844,15 +9844,15 @@ transform: translateX(26px);
     display: none;
 }
 
-/* Hiển thị pop-up khi checkbox được check */
-.toggle-checkbox:checked ~ .modal-deposit {
+.modal-deposit {
+    display: none;
+    /* Other styles */
+}
+  
+.modal-deposit.visible {
     display: block;
 }
 
-/* Ẩn pop-up content khi checkbox không được check */
-/* .toggle-checkbox:checked ~ .modal-deposit .modal-deposit-content {
-    display: block;
-} */
 
 .clearfix2{
     position: relative;
