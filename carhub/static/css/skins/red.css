@@ -763,3 +763,19 @@ li.active.filtr-button.filtr a{
         color: #fff;
     }*/
 }
+
+a.thembo.fgpw:hover {
+    color: #437FC7;
+}
+
+a.google-bg:hover{
+    background-color: #903931;
+}
+
+a.facebook-bg:hover {
+    background-color: #5e7ec4;
+}
+
+button.btn-md.btn-theme.float-center:hover {
+    background-color: #284ea1;
+}
