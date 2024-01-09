@@ -8119,8 +8119,8 @@ table {
 
 @media all and (min-width: 992px) {
     .banner img {
-        /*animation: bgburnsEast 25s linear infinite alternate;
-        -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
+        animation: bgburnsEast 25s linear infinite alternate;
+        -webkit-animation: bgburnsEast 25s linear infinite alternate;
     }
 
     .dropdown:hover > .dropdown-menu {
