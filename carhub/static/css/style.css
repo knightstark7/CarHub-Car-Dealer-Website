@@ -1731,7 +1731,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .sb-7 .button-theme:hover {
-    background: #252525;
+    background: #122186;
 }
 
 .sb-8 .bootstrap-select button {
@@ -2224,7 +2224,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .car-box .detail .title a:hover {
-    color: #343a40;
+    color: #37adaa;
 }
 
 .car-box .detail .location {

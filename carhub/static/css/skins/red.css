@@ -3,7 +3,7 @@
 }
 
 .button-theme:hover {
-    background: #dc141d;
+    background: #37adaa;
 }
 
 .btn-border {
@@ -16,12 +16,12 @@
 }
 
 .pages-404 .btn:hover {
-    background: #dc141d;
+    background: #37adaa;
 }
 
 .btn-border:hover{
-    background: #dc141d;
-    border: solid 1px #dc141d;
+    background: #37adaa;
+    border: solid 1px #37adaa;
 }
 
 .blog-2 .b-btn{
