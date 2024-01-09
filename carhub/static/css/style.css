@@ -60,7 +60,7 @@ ul {
 }
 
 .google:hover {
-    color: #dc4e41 !important;
+    color: #37adaa !important;
 }
 
 .rss:hover {
@@ -128,7 +128,7 @@ ul {
 }
 
 .pinterest-bg:hover {
-    background: #a30618;
+    background: #37adaa;
     color: #fff;
 }
 
@@ -1133,17 +1133,17 @@ input[type=checkbox]:checked + label:before {
 .banner h3 {
     color: #fff;
     margin-bottom: 20px;
-    font-size: 50px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 800;
     letter-spacing: normal;
     text-transform: uppercase;
 }
 
 .banner h5{
-    color: #fff;
+    color: rgba(255, 255, 255, 2);;
     margin-bottom: 25px;
-    font-size: 20px;
-    font-weight: 300;
+    font-size: 25px;
+    font-weight: 600;
     line-height: 33px;
 }
 
@@ -1731,7 +1731,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .sb-7 .button-theme:hover {
-    background: #252525;
+    background: #122186;
 }
 
 .sb-8 .bootstrap-select button {
@@ -2224,7 +2224,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .car-box .detail .title a:hover {
-    color: #343a40;
+    color: #37adaa;
 }
 
 .car-box .detail .location {
@@ -3338,7 +3338,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .team-1 .google-bg:hover {
-    background: #dc4e41!important;
+    background: #37adaa!important;
 }
 
 .our-team-2{
@@ -3442,7 +3442,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .team-2 .google-bg:hover {
-    background: #dc4e41!important;
+    background: #37adaa!important;
 }
 
 /** pages 404 start **/
@@ -3928,7 +3928,7 @@ footer {
 }
 
 .footer .google-bg:hover {
-    background: #dc4e41!important;
+    background: #37adaa!important;
 }
 
 .footer .linkedin-bg:hover {
@@ -8119,8 +8119,8 @@ table {
 
 @media all and (min-width: 992px) {
     .banner img {
-        /*animation: bgburnsEast 25s linear infinite alternate;
-        -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
+        animation: bgburnsEast 25s linear infinite alternate;
+        -webkit-animation: bgburnsEast 25s linear infinite alternate;
     }
 
     .dropdown:hover > .dropdown-menu {
@@ -9862,3 +9862,12 @@ transform: translateX(26px);
 .fgpw {
     color: #437FC7;
 }
+
+ /* .banner .bg_h35 {
+    width: 65%;
+    background: rgba(0,0,0, 0.1);
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    backdrop-filter: blur(3.5px);
+}  */

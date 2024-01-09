@@ -3,7 +3,7 @@
 }
 
 .button-theme:hover {
-    background: #dc141d;
+    background: #37adaa;
 }
 
 .btn-border {
@@ -16,12 +16,12 @@
 }
 
 .pages-404 .btn:hover {
-    background: #dc141d;
+    background: #37adaa;
 }
 
 .btn-border:hover{
-    background: #dc141d;
-    border: solid 1px #dc141d;
+    background: #37adaa;
+    border: solid 1px #37adaa;
 }
 
 .blog-2 .b-btn{
@@ -58,7 +58,7 @@
 }
 
 .blog-3 .post-meta ul li i {
-    color: #f01520;
+    color: #437FC7;
 }
 
 .blog-3 .date-box {
@@ -151,7 +151,7 @@
 }
 
 .blog-3 .post-meta ul li i{
-    color: #f01520;
+    color: #437FC7;
 }
 
 .carousel-indicators .active {
@@ -183,7 +183,7 @@
 }
 
 .dashboard-nav ul {
-    border-bottom: 1px solid #dc141d;
+    border-bottom: 1px solid #437FC7;
 }
 
 .new-user-box .follow:hover{
@@ -274,8 +274,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .btn-theme:hover{
-    background: #dc141d;
-    border: solid 1px #dc141d;
+    background: #437FC7;
+    border: solid 1px #437FC7;
 }
 
 .btn-white-lg-outline:hover {
@@ -341,7 +341,7 @@ input[type=checkbox]:checked + label:before {
 
 .search-button:hover {
     color: #fff;
-    background: #dc141d;
+    background: #437FC7;
 }
 
 .pricing-1 .plan-header .plan-price {
@@ -438,8 +438,8 @@ footer .footer-item .contact-info li label a:hover {
 }
 
 .btn-outline:hover {
-    border: solid 1px #dc141d;
-    background: #dc141d;
+    border: solid 1px #437FC7;
+    background: #437FC7;
     color: #fff;
 }
 
@@ -454,8 +454,8 @@ footer .footer-item .contact-info li label a:hover {
 }
 
 .btn-outline-2:hover {
-    border: solid 2px #dc141d;
-    background: #dc141d;
+    border: solid 2px #437FC7;
+    background: #437FC7;
     color: #fff;
 }
 
@@ -626,7 +626,7 @@ li.active.filtr-button.filtr a{
 }
 
 .comment-content h6 span a:hover{
-    color: #dc141d;
+    color: #437FC7;
 }
 
 .bg-active {
