@@ -1,7 +1,7 @@
 # CarHub - Car Dealer Website
 
-## Final Project - Introduction to Software Engineering
-## VNU HCM - University of Science
+## Final Project - Introduction to Software Engineering - VNU HCM - University of Science
+
 
 ## Member Contributor Information
 | Name              | ID       |
