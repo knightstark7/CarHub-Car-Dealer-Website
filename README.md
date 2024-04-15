@@ -1,6 +1,6 @@
 # CarHub - Car Dealer Website
 
-## Final Project - Introduction to Software Engineering - VNU HCM - University of Science
+## Final Project - Introduction to Software Engineering - HCMUS
 
 
 ## Member Contributor Information
@@ -94,7 +94,7 @@ which automatically runs the django server in port 8000
 Then, open your browser and type localhost:8000 or 127.0.0.1:8000
 
 ## Demo:
-link demo: https://www.youtube.com/watch?v=hpllW2t5fSc
+- Link demo: https://www.youtube.com/watch?v=hpllW2t5fSc
 
 ## Deployment:
 Our website and database are deployed on a server on [Render](https://render.com/). However, unfortunately, we don't have sufficient funds to renew the package, resulting in the temporary suspension of our website. Please clone our repository to run the website locally. :-)
