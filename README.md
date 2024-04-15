@@ -64,6 +64,7 @@ In this project, our website follows `MVT` (Model - View - Template) architectur
 - CarHub employs HTML, CSS, JavaScript, Bootstrap for a responsive Front end 
 - Django as a powerful Back-end framework for efficient development
 - PostgreSQL as a reliable database for seamless data management. 
+
 ==> This tech stack ensures a user-friendly design, robust functionality, and effective handling of data on the CarHub website.
 <p align="center">
   <img src="https://github.com/knightstark7/CarHub-Car-Dealer-Website/blob/main/images/tech_stack.png" >
